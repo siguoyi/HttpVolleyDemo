@@ -1,12 +1,60 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
+	<TextView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Demo for Volley"
+	    android:textSize="20sp"/>
+	<Button 
+	    android:id="@+id/bt_get"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:text="GET"/>  
+	<ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="100dp">
+	    <TextView
+	        android:id="@+id/tv_get"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Message for GET" />
+	</ScrollView>  
+    
+    <Button 
+	    android:id="@+id/bt_post"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:text="POST"/>    
+    <ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="100dp">
+	    <TextView
+	        android:id="@+id/tv_post"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Message for POST" />
+	</ScrollView> 
+    <Button 
+	    android:id="@+id/bt_json"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:text="JSON"/>    
+   <ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="100dp">
+	    <TextView
+	        android:id="@+id/tv_json"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Message for JSON" />
+	</ScrollView> 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
-</RelativeLayout>
+</LinearLayout>
