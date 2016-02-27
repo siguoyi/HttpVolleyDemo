@@ -1,5 +1,10 @@
 package com.example.httpvolleydemo;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.android.volley.Request.Method;
+import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -18,7 +23,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		StringRequest stringRequest = new StringRequest("http://www.baidu.com", new Response.Listener<String>() {
+		StringRequest getRequest = new StringRequest("http://www.baidu.com", new Response.Listener<String>() {
 
 			@Override
 			public void onResponse(String response) {
@@ -32,7 +37,29 @@ public class MainActivity extends Activity {
 			}
 		});
 		
+		StringRequest postRequest = new StringRequest(Method.POST, "http://www.baidu.com", new Response.Listener<String>() {
+
+			@Override
+			public void onResponse(String response) {
+				
+			}
+		}, new Response.ErrorListener() {
+
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				
+			}}){
+			@Override
+			protected Map<String, String> getParams() throws AuthFailureError {
+				Map<String, String> map = new HashMap<String, String>();
+				map.put("params1", "value1");
+				map.put("params2", "value2");
+				return map;
+			}
+		};
+		
 		RequestQueue requestQueue = Volley.newRequestQueue(this);
-		requestQueue.add(stringRequest);
+		requestQueue.add(getRequest);
+		requestQueue.add(postRequest);
 	}
 }
