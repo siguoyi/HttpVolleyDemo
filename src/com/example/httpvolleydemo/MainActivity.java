@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener{
 	private static final String TAG = "MainActivity";
@@ -40,6 +41,10 @@ public class MainActivity extends Activity implements OnClickListener{
 		bt_get = (Button) findViewById(R.id.bt_get);
 		bt_post = (Button) findViewById(R.id.bt_post);
 		bt_json = (Button) findViewById(R.id.bt_json);
+		bt_get.setOnClickListener(this);
+		bt_post.setOnClickListener(this);
+		bt_json.setOnClickListener(this);
+		
 		tv_get = (TextView) findViewById(R.id.tv_get);
 		tv_post = (TextView) findViewById(R.id.tv_post);
 		tv_json = (TextView) findViewById(R.id.tv_json);
@@ -47,8 +52,10 @@ public class MainActivity extends Activity implements OnClickListener{
 	}
 	@Override
 	public void onClick(View v) {
+		Log.d(TAG, "onClick");
 		switch (v.getId()) {
 		case R.id.bt_get:
+			Toast.makeText(MainActivity.this, "GET", Toast.LENGTH_SHORT).show();
 			StringRequest getRequest = new StringRequest("http://www.baidu.com", new Response.Listener<String>() {
 
 				@Override
