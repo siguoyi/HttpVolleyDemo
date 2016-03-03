@@ -27,20 +27,16 @@
 	</ScrollView>  
     
     <Button 
-	    android:id="@+id/bt_post"
+	    android:id="@+id/bt_image"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_marginTop="10dp"
-	    android:text="POST"/>    
-    <ScrollView 
-	    android:layout_width="fill_parent"
-	    android:layout_height="100dp">
-	    <TextView
-	        android:id="@+id/tv_post"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:text="Message for POST" />
-	</ScrollView> 
+	    android:text="Image"/>    
+    <ImageView 
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
     <Button 
 	    android:id="@+id/bt_json"
 	    android:layout_width="fill_parent"
